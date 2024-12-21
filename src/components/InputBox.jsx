@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 
 export const InputBox = ({
   label,
@@ -11,6 +11,7 @@ export const InputBox = ({
   currencyDisable = false,
   className = "",
 }) => {
+  const amountInputId = useId()
   return (
     <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
       <div className="w-1/2">
@@ -21,6 +22,7 @@ export const InputBox = ({
           {label}
         </label>
         <input
+          id={amountInputId}
           type="number"
           placeholder="Amount"
           className="outline-none w-full bg-transparent py-1.5"
